@@ -55,5 +55,6 @@ public class TechariumItemModelProvider extends TechariumItemModelProviderBase {
         machineItemGen(BlockRegistry.ARBORETUM, MachineDimensions._1X1X2);
         machineItemGen(BlockRegistry.GRAVMAGNET, MachineDimensions._1X1X1);
         machineItemGen(BlockRegistry.MAGNETIC_COIL, MachineDimensions._1X1X1);
+        machineItemGen(BlockRegistry.POWERED_FURNACE, MachineDimensions._1X1X2);
     }
 }

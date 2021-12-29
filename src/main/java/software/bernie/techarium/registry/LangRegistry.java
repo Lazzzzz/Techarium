@@ -24,4 +24,5 @@ public class LangRegistry extends LangRegistryBase {
     public static final TranslationLangEntry magneticCoilDescription = registerDescription(BlockRegistry.MAGNETIC_COIL.getBlockRegistryObject());
     public static final TranslationLangEntry voltaicPileDescription = registerDescription(BlockRegistry.VOLTAIC_PILE.getBlockRegistryObject());
     public static final TranslationLangEntry depotDescription = registerDescription(BlockRegistry.DEPOT.getBlockRegistryObject());
+    public static final TranslationLangEntry poweredFurnaceDescription = registerDescription(BlockRegistry.POWERED_FURNACE.getBlockRegistryObject());
 }

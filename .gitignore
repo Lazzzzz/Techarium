@@ -1,5 +1,6 @@
 # eclipse
 bin
+src/generated
 *.launch
 .settings
 .metadata
@@ -12,6 +13,8 @@ out
 *.iws
 *.iml
 .idea
+src/generated
+
 
 #vscode
 .vscode

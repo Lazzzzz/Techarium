@@ -29,11 +29,15 @@ public class RecipeRegistry {
 
     public static final RegistryObject<IRecipeSerializer<ExchangeStationRecipe>> EXCHANGE_STATION_SERIALIZER =
             RECIPE_SERIALIZER_REGISTRY.register("exchange_station", ExchangeStationSerializer::new);
+    
+    public static final RegistryObject<IRecipeSerializer<PoweredFurnaceRecipe>> POWERED_FURNACE_SERIALIZER =
+            RECIPE_SERIALIZER_REGISTRY.register("powered_furnace", PoweredFurnaceRecipeSerializer::new);
 
     public static IRecipeType<BotariumRecipe> BOTARIUM_RECIPE_TYPE = IRecipeType.register("techarium:botarium");
     public static IRecipeType<ArboretumRecipe> ARBORETUM_RECIPE_TYPE = IRecipeType.register("techarium:arboretum");
     public static IRecipeType<GravMagnetRecipe> GRAVMAGNET_RECIPE_TYPE = IRecipeType.register("techarium:gravmagnet");
     public static IRecipeType<HammerRecipe> HAMMER_RECIPE_TYPE = IRecipeType.register("techarium:hammering");
+    public static IRecipeType<PoweredFurnaceRecipe> POWERED_FURNACE_RECIPE_TYPE = IRecipeType.register("techarium:powered_furnace");
 
     public static IRecipeType<ExchangeStationRecipe> EXCHANGE_STATION_RECIPE_TYPE = IRecipeType.register("techarium:exchange_station");
 

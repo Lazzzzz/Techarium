@@ -60,6 +60,7 @@ public class TechariumLangProvider extends TechariumLangProviderBase {
         addBlock(BlockRegistry.DEPOT, "Depot");
         addBlock(BlockRegistry.GRAVMAGNET, "Grav Magnet");
         addBlock(BlockRegistry.MAGNETIC_COIL, "Magnetic Coil");
+        addBlock(BlockRegistry.POWERED_FURNACE, "Powered Furnace");
 
         addBlock(BlockRegistry.VOLTAIC_PILE, "Voltaic Pile");
         addBlock(BlockRegistry.EXCHANGE_STATION, "Exchange Station");
@@ -93,6 +94,7 @@ public class TechariumLangProvider extends TechariumLangProviderBase {
         addBlock(BlockRegistry.NICKEL_FACTORY_BLOCK, "Nickel Factory Block");
         addBlock(BlockRegistry.LEAD_FACTORY_BLOCK, "Lead Factory Block");
         addBlock(BlockRegistry.ZINC_FACTORY_BLOCK, "Zinc Factory Block");
+        addBlock(BlockRegistry.SCAFFOLDING, "Metal Scaffolding");
 
         addBlock(BlockRegistry.TECH_BUTTON, "Button");
         addBlock(BlockRegistry.TECH_LEVER, "Lever");
@@ -114,5 +116,7 @@ public class TechariumLangProvider extends TechariumLangProviderBase {
         addTranslation(LangRegistry.gravMagnetDescription, "The Grav Magnet will attract or repel every entity in front of the block. Use a redstone signal to switch between the two modes. Can be boosted if a magnetic coil is placed behind");
         addTranslation(LangRegistry.magneticCoilDescription, "The Magnetic Coil is used to boost the Grav Magnet. Add a coil inside to boost the power");
         addTranslation(LangRegistry.depotDescription, "The Depot is used to create Plates and automate the GravMagnet Recipes.");
+        addTranslation(LangRegistry.poweredFurnaceDescription, "The Powered Furnace is just a basic furnace, but with POWAH !");
+        
     }
 }

@@ -9,6 +9,7 @@ import software.bernie.techarium.client.tile.model.ArboretumModel;
 import software.bernie.techarium.client.tile.model.BotariumModel;
 import software.bernie.techarium.client.tile.model.GravMagnetModel;
 import software.bernie.techarium.client.tile.model.MagneticCoilModel;
+import software.bernie.techarium.client.tile.model.PoweredFurnaceModel;
 import software.bernie.techarium.tile.gravmagnet.GravMagnetTile;
 import software.bernie.techarium.tile.magneticcoils.MagneticCoilTile;
 
@@ -46,4 +47,12 @@ public class ItemBehaviours {
                 }
             })
             .build();
+    
+    public static ItemBehaviour poweredfurnace = new ItemBehaviour.Builder()
+            .composeFrom(ItemPartialBehaviours.partialBaseItem)
+            .geoISTER(event -> singleAnimation(event, "inventory"), new PoweredFurnaceModel())
+            .build();
+    
+    
+    
 }

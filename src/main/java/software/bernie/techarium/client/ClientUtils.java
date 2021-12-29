@@ -28,6 +28,7 @@ public class ClientUtils {
 		ClientRegistry.bindTileEntityRenderer(BlockRegistry.GRAVMAGNET.getTileEntityType(), GravMagnetRenderer::new);
 		ClientRegistry.bindTileEntityRenderer(BlockRegistry.MAGNETIC_COIL.getTileEntityType(), MagneticCoilRenderer::new);
 		ClientRegistry.bindTileEntityRenderer(BlockRegistry.DEPOT.getTileEntityType(), DepotRenderer::new);
+		ClientRegistry.bindTileEntityRenderer(BlockRegistry.POWERED_FURNACE.getTileEntityType(), PoweredFurnaceRenderer::new);
 	}
 
 	@SubscribeEvent

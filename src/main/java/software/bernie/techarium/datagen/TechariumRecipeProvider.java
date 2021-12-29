@@ -37,6 +37,7 @@ public class TechariumRecipeProvider extends TechariumRecipeProviderBase {
         registerHammerRecipes(consumer);
         registerSmeltingRecipes(consumer);
         registerCraftingRecipes(consumer);
+        registerPoweredFurnaceRecipes(consumer);
         ModIntegrations.getIntegrations().forEach(wrapper -> wrapper.get().ifPresent(o -> o.generateRecipes(consumer)));
     }
 
@@ -303,6 +304,11 @@ public class TechariumRecipeProvider extends TechariumRecipeProviderBase {
         buildExchangeStationRecipe(Items.GOLD_INGOT, 11, Items.NETHER_STAR, 1, consumer);
         buildExchangeStationRecipe(Items.GOLD_INGOT, 13, Items.FIREWORK_ROCKET, 1, consumer);
         buildExchangeStationRecipe(Items.GOLD_INGOT, 7, Items.LEVER, 1, consumer);
+    }
+    
+    private void registerPoweredFurnaceRecipes(Consumer<IFinishedRecipe> consumer) {
+    	//Just a dummy recipe for vanilla one
+    	buildPoweredFurnaceRecipe(Items.BEDROCK, ChancedItemStackList.of(ItemStack.EMPTY), 8 * 20, consumer);    
     }
 
     private void registerVanillaArboretumRecipes(Consumer<IFinishedRecipe> consumer) {

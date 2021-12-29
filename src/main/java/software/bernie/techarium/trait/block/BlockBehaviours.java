@@ -1,6 +1,5 @@
 package software.bernie.techarium.trait.block;
 
-import net.minecraft.block.BlockRenderType;
 import software.bernie.techarium.block.gravmagnet.GravMagnetBlock;
 import software.bernie.techarium.block.voltaicpile.VoltaicPileBlock;
 import software.bernie.techarium.registry.LangRegistry;
@@ -10,9 +9,8 @@ import software.bernie.techarium.tile.depot.DepotTileEntity;
 import software.bernie.techarium.tile.exchangestation.ExchangeStationTile;
 import software.bernie.techarium.tile.gravmagnet.GravMagnetTile;
 import software.bernie.techarium.tile.magneticcoils.MagneticCoilTile;
+import software.bernie.techarium.tile.poweredfurnace.PoweredFurnaceTile;
 import software.bernie.techarium.tile.voltaicpile.VoltaicPileTile;
-import software.bernie.techarium.trait.Trait;
-import software.bernie.techarium.trait.Traits;
 
 public class BlockBehaviours {
     public static final BlockBehaviour BOTARIUM = new BlockBehaviour.Builder()
@@ -66,6 +64,13 @@ public class BlockBehaviours {
             .rotation(BlockTraits.RotationType.XZ)
             .with(new BlockTraits.PropertyTrait(VoltaicPileBlock.CHARGE, VoltaicPileBlock.Charge.FULL))
             .description(LangRegistry.voltaicPileDescription)
+            .build();
+    
+    public static final BlockBehaviour POWERED_FURNACE = new BlockBehaviour.Builder()
+            .composeFrom(BlockPartialBehaviours.partialMachineBlock)
+            .tileEntity(PoweredFurnaceTile.class)
+            .rotation(BlockTraits.RotationType.XZ)
+            .description(LangRegistry.poweredFurnaceDescription)
             .build();
 
     public static BlockBehaviour createSlave(BlockBehaviour masterBehaviour) {

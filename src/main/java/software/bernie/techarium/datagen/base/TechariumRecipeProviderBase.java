@@ -24,6 +24,7 @@ import software.bernie.techarium.recipe.recipe.ArboretumRecipe;
 import software.bernie.techarium.recipe.recipe.BotariumRecipe;
 import software.bernie.techarium.recipe.recipe.GravMagnetRecipe;
 import software.bernie.techarium.recipe.recipe.HammerRecipe;
+import software.bernie.techarium.recipe.recipe.PoweredFurnaceRecipe;
 import software.bernie.techarium.registry.TagRegistry;
 import software.bernie.techarium.util.loot.ChancedItemStackList;
 
@@ -150,5 +151,21 @@ public abstract class TechariumRecipeProviderBase extends ForgeRecipeProvider {
         ShapedRecipeBuilder.shaped(block).define('#', ingotTag).pattern("###").pattern("###")
                 .pattern("###").unlockedBy("has_" + ingotName, has(ingotTag))
                 .save(consumer, Techarium.rl(name + "/" + blockName + "_from_" + ingotName));
+    }
+    
+    public void buildPoweredFurnaceRecipe(Item input, ChancedItemStackList output, int time, Consumer<IFinishedRecipe> consumer) {
+    	String name = "poweredfurnace/" + input.getRegistryName().getNamespace() + "/" + input.getRegistryName().getPath();
+    	
+    	if (output.getStackList().get(0).getStack().isEmpty())
+    		name = "poweredfurnace/minecraft/vanillarecipes";
+    	
+    	PoweredFurnaceRecipe.builder()
+		.ingredient(Ingredient.of(new ItemStack(input)))
+		.result(output)
+        .maxProgress(time)
+        .rfPerTick(10)
+        .progressPerTick(1)
+		.construct()
+		.build(consumer, new ResourceLocation(Techarium.MOD_ID, name));
     }
 }

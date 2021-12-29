@@ -5,6 +5,7 @@ import net.minecraftforge.fml.network.NetworkRegistry;
 import net.minecraftforge.fml.network.simple.SimpleChannel;
 import software.bernie.techarium.Techarium;
 import software.bernie.techarium.network.container.*;
+import software.bernie.techarium.network.tile.UpdateAnimationPoweredFurnacePacket;
 import software.bernie.techarium.network.tile.UpdateCoilTypePacket;
 
 public class NetworkConnection {
@@ -24,6 +25,7 @@ public class NetworkConnection {
         registerMessage(new ChangedMainConfigContainerPacket());
         registerMessage(new RecipeWidgetClickContainerPacket());
         registerMessage(new UpdateCoilTypePacket());
+        registerMessage(new UpdateAnimationPoweredFurnacePacket());
     }
     public static <MSG extends Packet<MSG>> void registerMessage(MSG dummyPacket) {
         INSTANCE.registerMessage(getAndUpdateIndex(),

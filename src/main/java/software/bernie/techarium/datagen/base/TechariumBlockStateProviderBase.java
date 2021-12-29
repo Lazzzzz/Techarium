@@ -85,6 +85,14 @@ public abstract class TechariumBlockStateProviderBase extends BlockStateProvider
         this.simpleBlock(block, model);
         this.simpleBlockItem(block, model);
     }
+    
+    public void simpleAxisBlockAndItem(Block block) {
+    	ResourceLocation side = Techarium.rl("block/" + name(block) + "_side");
+    	ResourceLocation top  = Techarium.rl("block/" + name(block) + "_top");
+    	ModelFile model = models().cubeColumn(name(block), side, top);
+        this.simpleBlock(block, model);
+        this.simpleBlockItem(block, model);
+    }
 
 
     public void existingBlockXYZ(Block block, ResourceLocation existingModel) {

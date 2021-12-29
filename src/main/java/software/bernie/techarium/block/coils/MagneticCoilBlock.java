@@ -16,6 +16,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkDirection;
 import net.minecraftforge.fml.network.NetworkHooks;
 import software.bernie.techarium.block.base.MachineBlock;
+import software.bernie.techarium.helper.NetworkHelper;
 import software.bernie.techarium.item.CoilItem;
 import software.bernie.techarium.network.NetworkConnection;
 import software.bernie.techarium.network.tile.UpdateCoilTypePacket;
@@ -32,10 +33,8 @@ public class MagneticCoilBlock extends MachineBlock<MagneticCoilTile> {
 	public void onPlace(BlockState state1, World level, BlockPos pos, BlockState state2, boolean flag) {
 		TileEntity te = level.getBlockEntity(pos);
 		if (te instanceof MagneticCoilTile) {
-			for (PlayerEntity player : level.players()) {
-				UpdateCoilTypePacket packet = new UpdateCoilTypePacket(pos, ((MagneticCoilTile) te).getCoilType());
-				NetworkConnection.INSTANCE.sendTo(packet, ((ServerPlayerEntity) player).connection.getConnection(), NetworkDirection.PLAY_TO_CLIENT);
-			}
+			UpdateCoilTypePacket packet = new UpdateCoilTypePacket(pos, ((MagneticCoilTile) te).getCoilType());
+			NetworkHelper.sendToAllClient(level, packet);
 		}
 	}
 	

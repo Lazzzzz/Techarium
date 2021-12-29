@@ -29,6 +29,7 @@ public class TechariumBlockStateProvider extends TechariumBlockStateProviderBase
     public void registerMachines(){
         simpleMachineBoxNoItem(BlockRegistry.BOTARIUM, models().modLoc("block/botarium_side"));
         simpleMachineBoxNoItem(BlockRegistry.ARBORETUM, models().modLoc("block/botarium_side"));
+        simpleMachineBoxNoItem(BlockRegistry.POWERED_FURNACE, models().modLoc("block/botarium_side"));
         simpleMachineXYZBoxNoItem(BlockRegistry.GRAVMAGNET, models().modLoc("block/gravmagnet_side"));
         simpleMachineXYZBoxNoItem(BlockRegistry.MAGNETIC_COIL, models().modLoc("block/magnetic_coil_side"));
         existingBlock(BlockRegistry.DEPOT.get(), models().modLoc("block/depot"));
@@ -72,6 +73,8 @@ public class TechariumBlockStateProvider extends TechariumBlockStateProviderBase
         simpleBlockAndItem(BlockRegistry.LEAD_FACTORY_BLOCK.get());
         simpleBlockAndItem(BlockRegistry.ZINC_FACTORY_BLOCK.get());
 
+        simpleAxisBlockAndItem(BlockRegistry.SCAFFOLDING.get());
+        
         simpleBlockItem(BlockRegistry.TECH_BUTTON.get(),
                 blockProvider.getExistingFile(Techarium.rl("block/tech_button_off")));
         simpleBlockItem(BlockRegistry.TECH_LEVER.get(),
